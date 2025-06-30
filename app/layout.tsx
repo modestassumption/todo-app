@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono,  } from "next/font/google";
 import "./globals.css";
+import localFont from 'next/font/local'
+
+const BitFont = localFont({
+  src:'./fonts/Bitcount-DoubleGrid.woff2/BitcountGridDouble-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf'
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme ='forest' className="{BitFont}">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
